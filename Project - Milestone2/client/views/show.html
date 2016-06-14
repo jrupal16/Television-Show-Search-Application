@@ -1,0 +1,31 @@
+<div class="container">	
+<table style="width:100%">
+<tr>
+    <th rowspan="3"> <center><h2>{{showname.name}}</h2>
+       				 <h4>{{showname.genres.join(' | ')}}</h4></center>
+
+				<image src = "{{showname.image.medium}}" >
+    </th>
+    <td><h3><b>Summary:</b></h3>
+  
+  
+    <p ng-bind-html ="showname.summary | trustHTML"></p></td>
+  </tr>
+ <tr>
+    <td>
+
+    <b><h3>Cast:</b></h3><br>
+
+    <p ng-repeat = "s in showname._embedded.cast">
+
+    <image ng-if="s.character.image.medium!=null" src = "{{s.character.image.medium}}" height="60" width="60" >
+    <image ng-if = "s.character.image.medium==null" src = "image/img.jpg" height="60" width="60">
+    &nbsp;&nbsp;{{s.person.name}}&nbsp;...&nbsp;{{s.character.name}}
+
+    </p>
+
+    </td>
+</tr>
+</table>
+
+</div>

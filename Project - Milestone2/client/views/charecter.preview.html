@@ -1,0 +1,27 @@
+<div class="container">	
+
+<pre ng-repeat = "show in fact">
+    
+   
+     <table style="width:100%">
+     <tr>
+
+    <th rowspan="2">         
+<image src = "{{show.show.image.medium}}" width="300" height="400">
+    </th>
+
+    <td><center><b><h2>{{show.show.name}}</h2></b></center></td>
+  </tr>
+  <tr>
+    <td><h5><p ng-bind-html ="show.show.summary | trustHTML"></p></h5></td>
+
+  </tr>
+
+</table>
+<p align="right">
+    <a href="/shows/{{show.show.id}}"><input type="button" value="Detail"></center
+      </p>
+</pre>
+
+
+</div>
